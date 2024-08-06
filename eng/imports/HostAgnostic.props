@@ -32,6 +32,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Threading" />
     <PackageReference Include="Microsoft.VisualStudio.Validation" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" />
+    
+    <PackageReference Include="Microsoft.IO.Redist" Condition="'$(TargetFramework)' == 'net472'" />
 
     <!-- VS MEF -->
     <PackageReference Include="Microsoft.VisualStudio.Composition" />
@@ -58,6 +60,9 @@
 
     <!-- Host-Agnostic Visual Studio -->
     <PackageReference Include="Microsoft.VisualStudio.ImageCatalog" />
+
+    <!-- To resolve assembly versioning issue by pinning a specific version. Should remove in future when packages fixed. -->
+    <PackageReference Include="StreamJsonRpc" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(IsUnitTestProject)' == 'true'">

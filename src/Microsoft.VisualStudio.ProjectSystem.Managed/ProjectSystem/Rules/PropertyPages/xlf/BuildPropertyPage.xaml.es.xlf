@@ -127,6 +127,16 @@
         <target state="translated">Preferir 32 bits</target>
         <note />
       </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|Description">
+        <source>Run on native hardware platform by default.</source>
+        <target state="translated">Ejecutar en la plataforma de hardware nativa de forma predeterminada.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|DisplayName">
+        <source>Prefer Native ARM64</source>
+        <target state="translated">Preferir ARM64 nativo</target>
+        <note />
+      </trans-unit>
       <trans-unit id="BoolProperty|ProduceReferenceAssembly|Description">
         <source>Produce a reference assembly containing the public API of the project.</source>
         <target state="translated">Genera un ensamblado de referencia que contiene la API pública del proyecto.</target>
@@ -455,6 +465,11 @@
       <trans-unit id="EnumValue|WarningLevel.7|DisplayName">
         <source>7 - Warnings from C# 11</source>
         <target state="translated">7 - Advertencias de C# 11</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="EnumValue|WarningLevel.8|DisplayName">
+        <source>8 - Warnings from C# 13</source>
+        <target state="translated">8 - Advertencias de C# 13</target>
         <note />
       </trans-unit>
       <trans-unit id="EnumValue|WarningLevel.9999|DisplayName">

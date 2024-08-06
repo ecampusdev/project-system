@@ -127,6 +127,16 @@
         <target state="translated">32비트 선호</target>
         <note />
       </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|Description">
+        <source>Run on native hardware platform by default.</source>
+        <target state="translated">기본적으로 네이티브 하드웨어 플랫폼에서 실행합니다.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|DisplayName">
+        <source>Prefer Native ARM64</source>
+        <target state="translated">네이티브 ARM64 선호</target>
+        <note />
+      </trans-unit>
       <trans-unit id="BoolProperty|ProduceReferenceAssembly|Description">
         <source>Produce a reference assembly containing the public API of the project.</source>
         <target state="translated">프로젝트의 공용 API를 포함하는 참조 어셈블리를 생성합니다.</target>
@@ -455,6 +465,11 @@
       <trans-unit id="EnumValue|WarningLevel.7|DisplayName">
         <source>7 - Warnings from C# 11</source>
         <target state="translated">7 - C# 11의 경고</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="EnumValue|WarningLevel.8|DisplayName">
+        <source>8 - Warnings from C# 13</source>
+        <target state="translated">8 - C# 13의 경고</target>
         <note />
       </trans-unit>
       <trans-unit id="EnumValue|WarningLevel.9999|DisplayName">

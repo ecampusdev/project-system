@@ -127,6 +127,16 @@
         <target state="translated">首选 32 位</target>
         <note />
       </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|Description">
+        <source>Run on native hardware platform by default.</source>
+        <target state="translated">默认情况下在本机硬件平台上运行。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="BoolProperty|PreferNativeArm64|DisplayName">
+        <source>Prefer Native ARM64</source>
+        <target state="translated">首选本机 ARM64</target>
+        <note />
+      </trans-unit>
       <trans-unit id="BoolProperty|ProduceReferenceAssembly|Description">
         <source>Produce a reference assembly containing the public API of the project.</source>
         <target state="translated">生成包含项目公共 API 的引用程序集。</target>
@@ -455,6 +465,11 @@
       <trans-unit id="EnumValue|WarningLevel.7|DisplayName">
         <source>7 - Warnings from C# 11</source>
         <target state="translated">7 - 来自 C# 11 的警告</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="EnumValue|WarningLevel.8|DisplayName">
+        <source>8 - Warnings from C# 13</source>
+        <target state="translated">8 - 来自 C# 13 的警告</target>
         <note />
       </trans-unit>
       <trans-unit id="EnumValue|WarningLevel.9999|DisplayName">

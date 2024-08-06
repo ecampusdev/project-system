@@ -53,17 +53,13 @@
     <!-- Path property: PkgMicrosoft_CodeAnalysis_Common -->
     <!-- The path is needed so we can copy the runtime assembly into the NPM package. -->
     <PackageReference Include="Microsoft.CodeAnalysis.Common" GeneratePathProperty="true" />
+    <PackageReference Include="System.Formats.Asn1" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == '$(NetCoreTargetFramework)'">
     <!-- Package for creating an NPM package during build. -->
     <!-- See: https://dev.azure.com/devdiv/DevDiv/_git/vs-green?path=/components&anchor=packaging-components -->
     <PackageReference Include="Microsoft.VisualStudio.Internal.MicroBuild.NpmPack" PrivateAssets="all" />
-
-    <!-- Force a particular version of this package to resolve a Component Governance issue. -->
-    <!-- ExcludeAssets="all" is specified because we don't actually want to _use_ the package. -->
-    <!-- TODO: This can be removed when CPS and/or MSBuild no longer depend (directly or transitively) on the bad version. -->
-    <PackageReference Include="System.Security.Cryptography.Pkcs" VersionOverride="7.0.2" ExcludeAssets="all" />
   </ItemGroup>
 
   <!-- Dependencies -->
@@ -376,6 +372,18 @@
       <RuleInjection>None</RuleInjection>
     </XamlPropertyRule>
 
+    <Compile Update="ProjectSystem\Rules\CollectedNuGetAuditSuppressions.cs">
+      <DependentUpon>CollectedNuGetAuditSuppressions.xaml</DependentUpon>
+    </Compile>
+    <XamlPropertyRule Include="ProjectSystem\Rules\CollectedNuGetAuditSuppressions.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <XlfInput>false</XlfInput>
+      <Generator>MSBuild:GenerateRuleSourceFromXaml</Generator>
+      <SubType>Designer</SubType>
+      <DataAccess>None</DataAccess>
+      <RuleInjection>None</RuleInjection>
+    </XamlPropertyRule>
+
     <Compile Update="ProjectSystem\Rules\CollectedPackageDownload.cs">
       <DependentUpon>CollectedPackageDownload.xaml</DependentUpon>
     </Compile>
@@ -656,7 +664,7 @@
     <ItemGroup>
       <NpmContent Include="exports.json" />
       <!-- We have a runtime dependency on Microsoft.CodeAnalysis.dll in VS Code scenarios. -->
-      <NpmContent Include="$(PkgMicrosoft_CodeAnalysis_Common)\lib\net7.0\Microsoft.CodeAnalysis.dll" />
+      <NpmContent Include="$(PkgMicrosoft_CodeAnalysis_Common)\lib\net8.0\Microsoft.CodeAnalysis.dll" />
       <NpmContent Include="@(SatelliteDllsProjectOutputGroupOutput)">
         <PackagePath>%(SatelliteDllsProjectOutputGroupOutput.TargetPath)</PackagePath>
       </NpmContent>
